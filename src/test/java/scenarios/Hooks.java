@@ -1,11 +1,10 @@
 package scenarios;
 
-import org.testng.annotations.*;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeGroups;
 import setup.Driver;
 import setup.PropertyFile;
 import setup.TestProperties;
-
-import java.io.IOException;
 
 public class Hooks extends Driver {
 

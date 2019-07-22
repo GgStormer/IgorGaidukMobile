@@ -22,6 +22,7 @@ public class Driver extends TestProperties {
     protected static String DRIVER;
     protected static String DEVICE_NAME;
     protected static String TIMEOUT;
+    protected static String UDID;
 
     private AppiumDriver driverSingle;
     private WebDriverWait waitSingle;
@@ -39,6 +40,7 @@ public class Driver extends TestProperties {
         DRIVER = getProperty("driver");
         DEVICE_NAME = getProperty("device_name");
         TIMEOUT = getProperty("timeout");
+//        UDID = getProperty("udid");
     }
 
     /**
@@ -65,12 +67,12 @@ public class Driver extends TestProperties {
                 throw new Exception("Unknown mobile platform");
         }
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, TEST_PLATFORM);
-
+//        capabilities.setCapability(MobileCapabilityType.UDID, UDID);
         // Setup type of application: mobile, web (or hybrid)
         if (PropertyFile.NATIVE.equals(TestProperties.getPropertyFile())) {
             // Native
-            File app = new File(AUT);
-            capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
+            capabilities.setCapability("appPackage", "com.example.android.contactmanager");
+            capabilities.setCapability("appActivity", "ContactManager");
         } else if (PropertyFile.WEB.equals(TestProperties.getPropertyFile())) {
             // Web
             capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, browserName);
