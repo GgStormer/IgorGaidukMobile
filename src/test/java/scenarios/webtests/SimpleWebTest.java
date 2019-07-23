@@ -1,7 +1,6 @@
 package scenarios.webtests;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.springframework.context.annotation.DependsOn;
 import org.testng.annotations.Test;
 import setup.Driver;
 
