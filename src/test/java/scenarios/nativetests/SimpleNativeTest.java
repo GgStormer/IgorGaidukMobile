@@ -1,7 +1,6 @@
 package scenarios.nativetests;
 
 import org.openqa.selenium.By;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import setup.Driver;
 
